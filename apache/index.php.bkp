@@ -1,0 +1,29 @@
+<html>
+<h2> Sample PHP with DB connection</h2>
+<body>
+<?php
+$url = 'http://172.17.0.1:8500/v1/catalog/service/thur_mysql-3306';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_URL,$url);
+$result=curl_exec($ch);
+curl_close($ch);
+
+$out = json_decode($result, true);
+
+$host = $out[0]["Address"];
+$port = $out[0]["ServicePort"];
+
+$dbname = 'test';
+$username = 'root';
+$password = 'test123';
+$server = '$host:$port';
+// Create connection
+$conn = new mysqli($host, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+</body>
+</html>
