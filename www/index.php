@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-    <?php echo "<h1>Hi! I'm happy</h1>"; ?>
+    <?php echo ""; ?>
 
     <?php
 $url = 'http://172.17.0.1:8500/v1/catalog/service/mysql-3306';
@@ -32,7 +32,7 @@ $result = $conn->query($query);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo " - Name: " . $row["greeting"]. "<br>";
+        echo " " . $row["greeting"]. "<br>";
     }
 } else {
     echo "0 results";

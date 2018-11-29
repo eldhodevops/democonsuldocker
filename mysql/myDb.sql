@@ -15,7 +15,7 @@ CREATE TABLE `greeting` (
 
 
 INSERT INTO `greeting` (`id`, `greeting`) VALUES
-(1, 'Hi Everone');
+(1, 'Hello, world');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
